@@ -1,7 +1,7 @@
 Para documentação em português, consulte o [README em Português](docs/README.pt.md).
 # Discord Webhook Java Library
 
-![JitPack](https://img.shields.io/jitpack/version/com.github.eduardomcb/discord-webhook)
+[![](https://jitpack.io/v/eduardomcb/discord-webhook.svg)](https://jitpack.io/#eduardomcb/discord-webhook)
 ![GitHub](https://img.shields.io/github/license/eduardomcb/discord-webhook)
 
 This is a Java library that simplifies the process of sending messages to Discord webhooks. It offers an easy way to integrate Discord channel messages into your Java projects.
