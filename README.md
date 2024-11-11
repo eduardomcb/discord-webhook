@@ -1,4 +1,5 @@
-Para documentação em português, consulte o [README em Português](docs/README.pt.md).
+For documentation in Portuguese, see the [README in Portuguese](docs/README.pt.md).
+
 # Discord Webhook Java Library
 
 [![](https://jitpack.io/v/eduardomcb/discord-webhook.svg)](https://jitpack.io/#eduardomcb/discord-webhook)
@@ -16,24 +17,43 @@ This is a Java library that simplifies the process of sending messages to Discor
 
 ## Installation
 
-To install this library, follow the steps below:
+To install this library, follow these steps:
 
-### Step 1/2: Add this to your `pom.xml` file:
+### Step 1: Add the JitPack repository to your `pom.xml` file:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+### Step 2: Add the dependency:
 
 ```xml
 <dependency>
-  <groupId>com.github.eduardomcb</groupId>
-  <artifactId>discord-webhook</artifactId>
-  <version>1.0.0</version>
+    <groupId>com.github.eduardomcb</groupId>
+    <artifactId>discord-webhook</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 
-### Step 2/2: Execute via the command line
+For Gradle, use the following configuration:
 
-Open the terminal and execute the following command:
+```gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
 
-```bash
-$ mvn install
+dependencies {
+    implementation 'com.github.eduardomcb:discord-webhook:1.0.0'
+}
 ```
 
 ## Getting Started
