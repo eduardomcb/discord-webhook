@@ -1,4 +1,5 @@
-For English documentation, please see the [English README](README.md).
+For English documentation, please see the [English README](../README.md).
+
 # Biblioteca Java para Webhooks do Discord
 
 [![](https://jitpack.io/v/eduardomcb/discord-webhook.svg)](https://jitpack.io/#eduardomcb/discord-webhook)
@@ -18,22 +19,41 @@ Esta é uma biblioteca Java que simplifica o processo de envio de mensagens para
 
 Para instalar esta biblioteca, siga os passos abaixo:
 
-### Passo 1/2: Adicione isso ao seu arquivo `pom.xml`:
+### Passo 1: Adicione o repositório do JitPack ao seu `pom.xml`:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+### Passo 2: Adicione a dependência:
 
 ```xml
 <dependency>
-  <groupId>com.github.eduardomcb</groupId>
-  <artifactId>discord-webhook</artifactId>
-  <version>1.0.0</version>
+    <groupId>com.github.eduardomcb</groupId>
+    <artifactId>discord-webhook</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 
-### Passo 2/2: Execute via linha de comando
+Para Gradle, use a seguinte configuração:
 
-Abra o terminal e execute o seguinte comando:
+```gradle
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
 
-```bash
-$ mvn install
+dependencies {
+    implementation 'com.github.eduardomcb:discord-webhook:1.0.0'
+}
 ```
 
 ## Começando
@@ -61,15 +81,15 @@ WebhookManager webhookManager = new WebhookManager()
 
 // Envie a mensagem e lide com a resposta
 webhookManager.setListener(new WebhookClient.Callback() {
-@Override
-public void onSuccess(String response) {
+    @Override
+    public void onSuccess(String response) {
         System.out.println("Mensagem enviada com sucesso");
-}
+    }
 
-@Override
-public void onFailure(int statusCode, String errorMessage) {
+    @Override
+    public void onFailure(int statusCode, String errorMessage) {
         System.out.println("Código: " + statusCode + " erro: " + errorMessage);
-        }
+    }
 });
 
 webhookManager.exec();
@@ -83,4 +103,4 @@ Se você deseja contribuir para o desenvolvimento desta biblioteca, sinta-se à 
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter detalhes.
+Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](../LICENSE) para obter detalhes.
