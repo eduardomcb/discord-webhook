@@ -58,7 +58,8 @@ public class WebhookClient {
             }
         } catch (IOException | URISyntaxException e) {
             System.err.println("I/O Error: " + e.getMessage());
-            callback.onFailure(-1, e.getMessage());
+            if (callback != null)
+                callback.onFailure(-1, e.getMessage());
         }
     }
 
@@ -77,7 +78,8 @@ public class WebhookClient {
                 response.append(inputLine);
             }
 
-            callback.onSuccess(response.toString());
+            if (callback != null)
+                callback.onSuccess(response.toString());
         }
     }
 
@@ -98,8 +100,8 @@ public class WebhookClient {
             while ((errorInputLine = errorReader.readLine()) != null) {
                 errorResponse.append(errorInputLine);
             }
-
-            callback.onFailure(-1, errorResponse.toString());
+            if (callback != null)
+                callback.onFailure(-1, errorResponse.toString());
         }
     }
 
